@@ -38,18 +38,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script>
 	Bmob.initialize("14886c61807ec8a5", "361123");
 	Bomb.debug(true)
-	function register(){
-		let params = {
-            username: document.getElementById("username").value,
-            password: document.getElementById("password").value,
-			email: document.getElementById("email").value
-        }
-        Bmob.User.register(params).then(res => {
-          location.href="done.html"
-        }).catch(err => {
-              alert(err.error);
-        });
-		
+	function login(){
+		Bmob.User.login(document.getElementById("username").value,document.getElementById("pwd").value).then(res => {
+			location.href="https://ntsc-yrx.github.io/Account/control/index.html"
+		}).catch(err => {
+			console.log(err)
+		});
 	}
 </script>
 </head>
@@ -95,24 +89,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="right-form-agile">
 			<!-- content -->
 			<div class="sub-main-w3">
-				<h3>现在注册！&nbsp;</h3>
-				<h5>创建一个账号是免费的&nbsp;</h5>
-				<p>你不必要担心什么！</p>
+				<h3>登录NYA账号&nbsp;</h3>
+				<h5>Ntsc-Yrx's Account&nbsp;</h5>
+				<p>登陆后可使用控制台&nbsp;</p>
 	
 					<div class="form-style-agile">
-						<label>你的用户名&nbsp;</label>
+					  <label>你的用户名&nbsp;</label>
 						<div class="pom-agile">
 							<span class="fas fa-user"></span>
 							<input placeholder="Your Name" name="Name" id="username" type="text" required="">
 						</div>
 					</div>
-					<div class="form-style-agile">
-						<label>Email</label>
-						<div class="pom-agile">
-							<span class="fas fa-envelope-open"></span>
-							<input placeholder="Email" name="Email" id="email" type="email" required="">
-						</div>
-					</div>
+					
 					<div class="form-style-agile">
 						<label>密码</label>
 						<div class="pom-agile">
@@ -128,9 +116,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 				<label class="anim">
 								
-							<a href="done.html"><strong><em>已有账号？</em></strong></a>
+							<a href="https://ntsc-yrx.github.io/Account/register/index.html"><strong><em>没有账号？</em></strong></a>
 								</label> 
-					<input type="submit" onclick="register()" value="一步注册">
+					<input type="submit" onclick="login()" value="登录">
 		
 			  <!-- social icons -->
 				<div class="w3ls-social">
