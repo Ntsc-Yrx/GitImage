@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="ch">
 <head>
-	<title></title>
+	<title>NYA MINI控制台</title>
+
 	<script src="js/Bmob-2.2.5.min.js"></script>
 <script>
 	Bmob.initialize("14886c61807ec8a5", "361123");
@@ -23,24 +24,38 @@
 		Bmob.updateUserPassword(objectId,data).then(res => {
 			console.log(res)
   		}).catch(err => {
-    		console.log(err)
+    		location.href="error.html"
   		})
 	}
 	function login(){
 		Bmob.User.login(document.getElementById("username").value,document.getElementById("pwd").value).then(res => {
 			location.href="https://ntsc-yrx.github.io/user/index.html"
 		}).catch(err => {
-			console.log(err)
+			location.href="error.html"
 		});
 	}
 	</script>
+
 </head>
 <body>
-	
 	<h1>Ntsc-Yrx Account MINI控制台</h1>
-	<p><img src="images/err.jpg" width="280" height="100" alt=""/><strong>警告！</strong>Bmob账户系统出现了问题！Error！</p>
+	<p>登录：（已登录可跳过）</p>
+	<input placeholder="用户名" name="Name" id="username" type="text" required="">
+	<input placeholder="密码" name="Name" id="pwd" type="password" required="">
+	<input type="submit" onclick="login()" value="确定">
+	<p>获取用户名：（验证是否登录）</p>
+	<span id="info"></span>
+	<button onclick="get()">获取用户名</button><br>
+	<p>退出登录：</p>
+	<button onClick="exit()">退出登录</button><br>
+	<p>修改密码：</p>
+	<input placeholder="旧密码" name="Name" id="oldpwd" type="text" required="">
+	<input placeholder="新密码" name="Name" id="newpwd" type="text" required="">
+	<input type="submit" onclick="oldnewpwd()" value="确定">
 	
-	<a href="index.html">回到控制台</a>
-	
+		<div class="copyright">
+				<p>&copy; 2021 <strong>Ntsc-Yrx</strong> All rights reserved&nbsp;
+				</p>
+			</div>
 </body>
 </html>
