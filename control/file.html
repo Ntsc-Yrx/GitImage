@@ -38,18 +38,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script>
 	Bmob.initialize("14886c61807ec8a5", "361123");
 	Bomb.debug(true)
-	function register(){
-		let params = {
-            username: document.getElementById("username").value,
-            password: document.getElementById("password").value,
-			email: document.getElementById("email").value
-        }
-        Bmob.User.register(params).then(res => {
-          location.href="done.html"
-        }).catch(err => {
-              alert(err.error);
-        });
-		
+	function upf(){
+		const fileUploadControl = document.getElementById('profilePhotoFileUpload');
+fileUploadControl.onchange = () => {
+  const pic = fileUploadControl.files
+  let file
+  for(let item of pic){
+     file = Bmob.File(item.name, item);
+  }
+  file.save().then(res => {
+    console.log(res.length);
+    console.log(res);
+  })
+}
 	}
 	
 </script>
@@ -87,6 +88,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			  </ul>
 		  </div>
 			<!-- copyright -->
+			
 			<div class="copyright">
 				<p>&copy; 2021 Ntsc-Yrx All rights reserved&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
 				</p>
@@ -98,12 +100,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="sub-main-w3">
 				<h3>NYA账号 - 控制中心</h3>
 				<h5>Ntsc-Yrx's Account&nbsp;</h5>
-			  <p>导向：</p>
+			  <p>上传文件：</p>
+				<input type="file" id="profilePhotoFileUpload"  multiple="multiple" class="button-w3ls"><i class="fas fa-long-arrow-alt-right"></i>
+					<input type="submit" onclick="upf()" value="上传">
+
 			  
-<p><a href="form/.html" class="button-w3ls"><i class="fas fa-long-arrow-alt-right"></i></a>&nbsp; &nbsp;验证登录状态</p>
-<p><a href="control/index.html" class="button-w3ls"><i class="fas fa-long-arrow-alt-right"></i></a>&nbsp; &nbsp;上传文件至服务器（不要点！）</p>
-<p><a href="register/index.html" class="button-w3ls"><i class="fas fa-long-arrow-alt-right"></i></a>&nbsp; &nbsp;修改密码</p>
-<p><a href="register/index.html" class="button-w3ls"><i class="fas fa-long-arrow-alt-right"></i></a>&nbsp; &nbsp;退出登录</p>
 			  <!-- social icons -->
 				<div class="w3ls-social">
 					<h3>暂时不支持使用第三方&nbsp;</h3>

@@ -424,6 +424,25 @@ a.button-w3ls i:hover {
     -ms-transition: 0.5s all;
     transition: 0.5s all;
 }
+.sub-main-w3 input[type="file"] {
+    color: #fff;
+    background: #c3c3c3;
+    border: none;
+    padding: 12px 0;
+    margin-top: 1.3em;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    transition: 0.5s all;
+}
+
 
 .sub-main-w3 input[type="submit"]:hover {
     opacity: .8;
