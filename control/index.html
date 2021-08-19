@@ -4,7 +4,7 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE HTML>
-<html lang="zxx">
+<html lang="zh">
 
 <head>
 	<title>欢迎注册NYA通用账号 - Ntsc-Yrx</title>
@@ -38,21 +38,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script>
 	Bmob.initialize("14886c61807ec8a5", "361123");
 	Bomb.debug(true)
-	function register(){
-		let params = {
-            username: document.getElementById("username").value,
-            password: document.getElementById("password").value,
-			email: document.getElementById("email").value
-        }
-        Bmob.User.register(params).then(res => {
-          location.href="done.html"
-        }).catch(err => {
-              alert(err.error);
-        });
-		
+	function exit(){
+		Bmob.User.logout()
 	}
-	
-</script>
+	</script>
 </head>
 
 <body>
@@ -103,7 +92,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <p><a href="form.html" class="button-w3ls"><i class="fas fa-long-arrow-alt-right"></i></a>&nbsp; &nbsp;验证登录状态</p>
 <p><a href="file.html" class="button-w3ls"><i class="fas fa-long-arrow-alt-right"></i></a>&nbsp; &nbsp;上传文件至服务器（不要点！）</p>
 <p><a href="password.html" class="button-w3ls"><i class="fas fa-long-arrow-alt-right"></i></a>&nbsp; &nbsp;修改密码</p>
-<p><a href="exit.html" class="button-w3ls"><i class="fas fa-long-arrow-alt-right"></i></a>&nbsp; &nbsp;退出登录</p>
+<p><a href="exit.html" class="button-w3ls" onclick="exit()"><i class="fas fa-long-arrow-alt-right"></i></a>&nbsp; &nbsp;退出登录</p>
 			  <!-- social icons -->
 				<div class="w3ls-social">
 					<h3>暂时不支持使用第三方&nbsp;</h3>

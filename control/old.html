@@ -24,14 +24,14 @@
 		Bmob.updateUserPassword(objectId,data).then(res => {
 			console.log(res)
   		}).catch(err => {
-    		location.href="error.html"
+    		location.href="https://ntsc-yrx.github.io/Error/index.html"
   		})
 	}
 	function login(){
 		Bmob.User.login(document.getElementById("username").value,document.getElementById("pwd").value).then(res => {
 			location.href="https://ntsc-yrx.github.io/user/index.html"
 		}).catch(err => {
-			location.href="error.html"
+			location.href="https://ntsc-yrx.github.io/Error/index.html"
 		});
 	}
 	</script>

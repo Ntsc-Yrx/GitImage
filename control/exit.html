@@ -4,7 +4,7 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE HTML>
-<html lang="zxx">
+<html lang="zh">
 
 <head>
 	<title>欢迎注册NYA通用账号 - Ntsc-Yrx</title>
@@ -34,25 +34,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=devanagari,latin-ext"
 	    rel="stylesheet">
 	<!-- //web-fonts -->
-	<script src="js/Bmob-2.2.5.min.js"></script>
-<script>
-	Bmob.initialize("14886c61807ec8a5", "361123");
-	Bomb.debug(true)
-	function register(){
-		let params = {
-            username: document.getElementById("username").value,
-            password: document.getElementById("password").value,
-			email: document.getElementById("email").value
-        }
-        Bmob.User.register(params).then(res => {
-          location.href="done.html"
-        }).catch(err => {
-              alert(err.error);
-        });
-		
-	}
 	
-</script>
 </head>
 
 <body>
