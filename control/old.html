@@ -11,6 +11,8 @@
 		let user = Bmob.User.current();
 		var spanTag = document.getElementById("info");
 		spanTag.innerHTML = user.username;
+		var spanTag = document.getElementById("uid");
+		spanTag.innerHTML = user.objectId;
 		}
 	function exit(){
 		Bmob.User.logout()
@@ -29,7 +31,7 @@
 	}
 	function login(){
 		Bmob.User.login(document.getElementById("username").value,document.getElementById("pwd").value).then(res => {
-			location.href="https://ntsc-yrx.github.io/user/index.html"
+			
 		}).catch(err => {
 			location.href="https://ntsc-yrx.github.io/Error/index.html"
 		});
@@ -44,7 +46,7 @@
 	<input placeholder="密码" name="Name" id="pwd" type="password" required="">
 	<input type="submit" onclick="login()" value="确定">
 	<p>获取用户名：（验证是否登录）</p>
-	<span id="info"></span>
+	<span id="info"></span><span id="uid"></span>
 	<button onclick="get()">获取用户名</button><br>
 	<p>退出登录：</p>
 	<button onClick="exit()">退出登录</button><br>

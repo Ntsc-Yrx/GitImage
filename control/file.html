@@ -39,7 +39,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	Bmob.initialize("14886c61807ec8a5", "361123");
 	Bomb.debug(true)
 	function upf(){
-		const fileUploadControl = document.getElementById('profilePhotoFileUpload');
+		const fileUploadControl = document.getElementById('file');
 		fileUploadControl.onchange = () => {
 		const pic = fileUploadControl.files
   		let file
@@ -101,7 +101,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<h3>NYA账号 - 控制中心</h3>
 				<h5>Ntsc-Yrx's Account&nbsp;</h5>
 			  <p>上传文件：</p>
-				<input type="file" id="profilePhotoFileUpload"  multiple="multiple" class="button-w3ls"><i class="fas fa-long-arrow-alt-right"></i>
+				<input type="file" id="file"  multiple="multiple" class="button-w3ls"><i class="fas fa-long-arrow-alt-right"></i>
 					<input type="submit" onclick="upf()" value="上传">
 
 			  
