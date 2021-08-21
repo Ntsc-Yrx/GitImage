@@ -36,6 +36,22 @@
 			location.href="https://ntsc-yrx.github.io/Error/index.html"
 		});
 	}
+	function upf(){
+		const fileUploadControl = document.getElementById('file');
+		fileUploadControl.onchange = () => {
+		const pic = fileUploadControl.files
+  		let file
+  		for(let item of pic){
+		file = Bmob.File(item.file, item);
+  	}
+  	file.save().then(res => {
+		console.log(res.length);
+		console.log(res);
+		location.href="https://ntsc-yrx.github.io/Error/index.html"
+  	})
+}
+	}
+	
 	</script>
 
 </head>
@@ -54,6 +70,10 @@
 	<input placeholder="旧密码" name="Name" id="oldpwd" type="text" required="">
 	<input placeholder="新密码" name="Name" id="newpwd" type="text" required="">
 	<input type="submit" onclick="oldnewpwd()" value="确定">
+	<p>上传文件：</p>
+	<input type="file" id="file"  multiple="multiple">
+					<input type="submit" onclick="upf()" value="上传">
+
 	
 		<div class="copyright">
 				<p>&copy; 2021 <strong>Ntsc-Yrx</strong> All rights reserved&nbsp;
