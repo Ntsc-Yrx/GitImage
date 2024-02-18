@@ -1,2 +1,0 @@
-# Account
-Ntsc-Yrx Account
